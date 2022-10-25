@@ -1,0 +1,19 @@
+.container-list{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    ;
+    h1{
+        margin-left: 2.5rem;
+    }
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    gap: 1rem;
+ 
+  
+}

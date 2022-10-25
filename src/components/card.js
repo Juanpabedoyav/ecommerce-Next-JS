@@ -1,14 +1,17 @@
-import Image from "next/image"
+import styles from '@styles/card.module.scss';
 
-const Card = ({title, price, img}) =>{
+const Card = ({ title, price, img }) => {
+  return (
+    <li className={styles.card}>
+      <figure>
+        <img src={img} alt={title} height={228} width={228} />
+      </figure>
+      <div className={styles['body-card']}>
+        <h2>{title}</h2>
+        <p>$ {price}</p>
+      </div>
+    </li>
+  );
+};
 
-    return(
-            <article style={{width:228, height: 420, border: "1px solid white"}}>
-                <h2>{title}</h2>
-                <p>$ {price}</p>   
-                <img src={img} alt ={title} height= {228} width= {228}/>             
-            </article>
-    )
-}
-
-export default Card
+export default Card;

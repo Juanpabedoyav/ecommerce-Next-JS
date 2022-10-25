@@ -11,6 +11,18 @@
             "@styles/*":[
                 "styles/*"
             ],
+            "@hooks/*":[
+                "hooks/*"
+            ],
+            "@context/*":[
+                "context/*"
+            ],
+            "@containers/*":[
+                "containers/*"
+            ],
+            "@services/*":[
+                "services/*"
+            ],
         }
     }
 }

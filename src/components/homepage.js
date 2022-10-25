@@ -1,40 +1,29 @@
-import { useEffect, useRef, useState } from "react";
-import Card from "@components/card";
+import Card from '@components/card';
+import useGetData from '@hooks/useGetData';
+import Categorias from './categorias';
+import styles from '@styles/homepage.module.scss';
 
-const HomePage = () =>{
+const HomePage = () => {
+  const API = 'https://api.escuelajs.co/api/v1/products?offset=0&limit=15';
+  const products = useGetData(API);
 
-    const [item, setItem] = useState([])
-    let likeRef = useRef(null);
-    const handleLike = () =>{
-        likeRef.current;
-        console.log(likeRef)
-    }
-
-    //get all data -> products
-    const getAllData = async () => {
-        try {
-            const res =await fetch('https://api.escuelajs.co/api/v1/products')
-            const result = await res.json()
-            setItem(result)
-        } catch (error) {
-            throw error    
-        }
-    }  
-
-    useEffect(() =>{
-        getAllData()
-     }),[];
-    
-    
-        return(
-            <div>
-            {item.map( article =>(
-                <>
-                  <Card img={article.images[1]} title= {article.title} price= {article.price}/>
-                </> 
-                ))}
-            </div>
-        )
-    }
+  return (
+    <>
+      <Categorias />
+      <div className={styles['container-list']}>
+        <h1>Most Popular</h1>
+        <ul className={styles.list}>
+          {products.map((product, index) => (
+            <>
+              <a href={`/detail`}>
+                <Card img={product.images[1]} title={product.title} price={product.price} />
+              </a>
+            </>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
 
 export default HomePage;
