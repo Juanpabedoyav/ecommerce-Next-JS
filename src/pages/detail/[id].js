@@ -6,7 +6,6 @@ export default function Detail() {
   const router = useRouter();
   const id = router.query.id;
   const products = useGetData(API);
-  console.log(products)
   let productSelect = products.find((el) => el.id === id);
   console.log(productSelect);
   return (
