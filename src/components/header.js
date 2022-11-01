@@ -1,10 +1,7 @@
 import Link from 'next/link';
-import { useContext } from 'react';
 import styles from '@styles/header.module.scss';
-import AppContext from '@context/appcontext';
-const Header = () => {
-  const { state, toggleOrder } = useContext(AppContext);
 
+const Header = () => {
   return (
     <nav className={styles.nav}>
       <div>

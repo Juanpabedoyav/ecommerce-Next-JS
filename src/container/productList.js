@@ -1,13 +1,10 @@
 import Card from '@components/card';
 import Search from '@components/search';
-import useGetData from '@hooks/useGetData';
 import useSearch from '@hooks/useSearch';
-import Categorias from '@components/categorias';
+import Categorias from '@container/categorias';
 import styles from '@styles/homepage.module.scss';
 
-const API = 'https://api.escuelajs.co/api/v1/products?offset=0&limit=15';
-const ProductList = () => {
-  const products = useGetData(API);
+const ProductList = ({ products }) => {
   const { search, handleSearch } = useSearch();
 
   const results = !search ? products : products.filter((dato) => dato.title.toLowerCase().includes(search.toLocaleLowerCase()));

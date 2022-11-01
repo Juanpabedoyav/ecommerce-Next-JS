@@ -1,16 +1,13 @@
-import AppContext from '@context/appcontext';
 import ProductList from '@container/productList';
-import Header from '@components/header';
-import useInitialState from '@hooks/useInitialState';
+import useGetData from '@hooks/useGetData';
 
 export default function Home() {
-  const initialState = useInitialState();
+  const API = 'https://api.escuelajs.co/api/v1/products?offset=0&limit=15';
+  const products = useGetData(API);
+
   return (
     <>
-      <AppContext.Provider value={initialState}>
-        <Header />
-        <ProductList />
-      </AppContext.Provider>
+      <ProductList products={products} />
     </>
   );
 }
