@@ -17,8 +17,8 @@
             "@context/*":[
                 "context/*"
             ],
-            "@containers/*":[
-                "containers/*"
+            "@container/*":[
+                "container/*"
             ],
         }
     }
