@@ -1,0 +1,30 @@
+.category-section{
+    border: 1px solid red;
+    height: 300px;
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+.category-card{
+    width: 100px ;
+    height: 250px;
+    list-style: none;
+    position: relative;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+strong{
+    position: absolute;
+    bottom: 3rem;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+display: block;
+margin: 0 auto;
+}
+img{
+    width: 100%;
+    object-fit: contain;
+}
+}
